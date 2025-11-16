@@ -1,8 +1,8 @@
 class Spmsift < Formula
   desc "Context-efficient Swift Package Manager analysis tool for Claude agents"
   homepage "https://github.com/elkraneo/spmsift"
-  url "https://github.com/elkraneo/spmsift/archive/refs/tags/v1.1.1.tar.gz"
-  sha256 "44e557f550fb3e295c4afcc1a76aa666cd90262e7b8541861ae8671e81247f5a"
+  url "https://github.com/elkraneo/spmsift/archive/refs/tags/v1.1.2.tar.gz"
+  sha256 "d07b004dbb14b57f58195b02731d28f2ee6dac9545fbf55fbe3c8ebef1a4d435"
   license "MIT"
   head "https://github.com/elkraneo/spmsift.git", branch: "main"
 
