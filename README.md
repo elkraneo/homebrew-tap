@@ -5,15 +5,17 @@
 ```bash
 brew tap elkraneo/tap
 brew install sbsift
+brew install spmsift
 ```
 
 ## Available Formulae
 
 - **sbsift**: Context-efficient Swift build analysis tool for Claude agents
+- **spmsift**: Context-efficient Swift Package Manager analysis tool for Claude agents
 
 ## sbsift
 
-`sbsift` is the third tool in the specialized sift family, completing the context efficiency trinity for Swift development. It converts verbose Swift build output into structured, minimal-context JSON.
+`sbsift` converts verbose Swift build output into structured, minimal-context JSON.
 
 ### Installation
 
@@ -35,13 +37,37 @@ swift test | sbsift --format summary
 swift build | sbsift --metrics
 ```
 
-### Features
+## spmsift
 
-- **Pipe-based interface** for seamless integration
-- **Multi-command support**: build, test, run, package commands
-- **Structured JSON output** for programmatic analysis
-- **Context-optimized output** < 1KB for any build size
-- **Error-aware** with detailed file/line/column information
-- **Performance-focused** < 50ms parse time
+`spmsift` converts verbose Swift Package Manager output into structured, minimal-context JSON.
 
-For more information, visit: https://github.com/elkraneo/sbsift
+### Installation
+
+```bash
+brew tap elkraneo/tap
+brew install spmsift
+```
+
+### Usage
+
+```bash
+# Analyze package structure
+swift package dump-package | spmsift
+
+# Analyze dependencies
+swift package show-dependencies | spmsift --format summary
+
+# Include metrics
+swift package dump-package | spmsift --metrics
+```
+
+## The Sift Family
+
+Together, sbsift and spmsift provide complete Swift ecosystem analysis:
+
+- **spmsift** → Package structure and dependencies (~1.5KB output)
+- **sbsift** → Build compilation and errors (~500B output)
+
+For more information:
+- sbsift: https://github.com/elkraneo/sbsift
+- spmsift: https://github.com/elkraneo/spmsift
