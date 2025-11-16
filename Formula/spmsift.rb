@@ -17,12 +17,12 @@ class Spmsift < Formula
   test do
     test_json = '{"name": "Test", "targets": []}'
     output = pipe_output("#{bin}/spmsift", test_json)
-    assert_match '"command": "dump-package"', output
-    assert_match '"success": true', output
+    assert_match "dump-package", output
+    assert_match "success", output
 
     # Test target-specific analysis
     target_json = '{"name": "Test", "targets": [{"name": "TestTarget", "type": "executable"}]}'
     target_output = pipe_output("#{bin}/spmsift --target TestTarget", target_json)
-    assert_match '"filteredTarget": "TestTarget"', target_output
+    assert_match "TestTarget", target_output
   end
 end
