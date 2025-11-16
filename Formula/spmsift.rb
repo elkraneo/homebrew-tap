@@ -10,7 +10,7 @@ class Spmsift < Formula
   depends_on macos: :monterey
 
   def install
-    system "swift", "build", "-c", "release", "--product", "spmsift"
+    system "swift", "build", "-c", "release", "--disable-sandbox", "--product", "spmsift"
     bin.install ".build/release/spmsift"
   end
 
